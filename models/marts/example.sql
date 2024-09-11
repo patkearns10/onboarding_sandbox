@@ -1,11 +1,3 @@
-select *
-
-
-
-
-
-
-
-
-
+select
+*
 from {{ ref('orders') }}
