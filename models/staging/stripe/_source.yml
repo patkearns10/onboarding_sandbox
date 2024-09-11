@@ -1,0 +1,19 @@
+sources:
+  - name: stripe
+    description: this is the strip source, where we bring in payment info
+    database: raw
+    tables:
+      - name: payment
+        description: this is the payment table with payments
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+          - name: orderid
+            tests:
+              - not_null
+          - name: status
+            tests:
+              - accepted_values:
+                  values: ["success", "failure"]
