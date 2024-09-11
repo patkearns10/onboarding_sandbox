@@ -1,0 +1,13 @@
+version: 2
+ 
+models:
+  - name: orders
+    columns:
+      - name: _pk
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        tests:
+          - unique
+          - not_null

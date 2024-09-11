@@ -2,6 +2,23 @@ version: 2
 
 sources:
   - name: stripe
+    description: this is the stripe source, where we bring in payment info
     database: raw
     tables:
       - name: payment
+        description: this is the payment table with payments
+        columns:
+          - name: id
+            description: |
+              this is tha primary key of the table.
+              multiple lines
+            tests:
+              - unique
+              - not_null
+          - name: orderid
+            tests:
+              - not_null
+          - name: status
+            tests:
+              - accepted_values:
+                  values: ["success", "fail"]
