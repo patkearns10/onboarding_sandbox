@@ -11,3 +11,9 @@ models:
         tests:
           - unique
           - not_null
+  - name: example
+    columns:
+      - name: _pk
+        tests:
+          - unique
+          - not_null
